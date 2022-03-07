@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import saludo,segunda_vista,dia
+from .views import saludo,segunda_vista,dia,numero_random,numero_del_usuario,nacimiento, mi_plantilla
 
 urlpatterns = [
     path('admin/',admin.site.urls),
@@ -23,4 +23,10 @@ urlpatterns = [
     path('',saludo),
     path('segunda',segunda_vista),
     path('dia',dia),
+    path('random/',numero_random),
+    path('dame-numero/<int:numero>',numero_del_usuario),
+    path('edad/<int:numero>',nacimiento),
+    path('mi_plantilla/',mi_plantilla),
+    # path('dame-numero/<numero>',numero_del_usuario),
+    # En el último no se espeifica el tipo de dato a ingresar en la URL
 ]
